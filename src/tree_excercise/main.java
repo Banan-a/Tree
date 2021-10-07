@@ -62,8 +62,6 @@ public class main {
         System.out.println("\n6.Test preoder(Node p)");
         tree.clear();
         tree.insertAll(a);
-        x = 63;
-        tmp = tree.search(x);
         tree.preorder(tmp);
         System.out.println("");
 
@@ -71,11 +69,53 @@ public class main {
         System.out.println("\n7.Test inorder(Node p)");
         tree.clear();
         tree.insertAll(a);
-        x = 63;
-        tmp = tree.search(x);
         tree.inorder(tmp);
         System.out.println("");
 
+        //Test postorder(Node p)
+        System.out.println("\n8.Test postorder(Node p)");
+        tree.clear();
+        tree.insertAll(a);
+        tree.postOrder(tmp);
+        System.out.println("");
+
+        //Test count(Node p)
+        System.out.println("\n9.Test count(Node p)");
+        tree.clear();
+        tree.insertAll(a);
+        System.out.println(tree.count(tmp));
+
+        //Test delete(Node p, int value)
+        System.out.println("\n10.Test delete(Node p, int value)");
+        tree.clear();
+        tree.insertAll(a);
+        tmp = tree.delete(tmp, 70);
+        tree.inorder(tmp);
+        System.out.println("");
+
+        //Test min(Node p)
+        System.out.println("\n11.Test min(Node p)");
+        tree.clear();
+        tree.insertAll(a);
+        System.out.println(tree.min(tmp));
+
+        //Test max(Node p)
+        System.out.println("\n12.Test max(Node p)");
+        tree.clear();
+        tree.insertAll(a);
+        System.out.println(tree.max(tmp));
+
+        //Test sum(Node p)
+        System.out.println("\n13.Test sum(Node p)");
+        tree.clear();
+        tree.insertAll(a);
+        System.out.println(tree.sum(tmp));
+
+        //Test avg(Node p)
+        System.out.println("\n14.Test avg(Node p)");
+        tree.clear();
+        tree.insertAll(a);
+        System.out.println(tree.avg(tmp));
     }
 
 }

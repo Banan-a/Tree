@@ -119,4 +119,68 @@ public class BinaryTree {
         inorder(p.right);
     }
 
+    public void postOrder(Node node) {
+        if (node != null) {
+            postOrder(node.left);
+            postOrder(node.right);
+            System.out.print(" " + node.value);
+        }
+    }
+
+    public int count(Node root) {
+        if (root == null) {
+            return 0;
+        }
+        return 1 + count(root.left) + count(root.right);
+    }
+
+    public Node delete(Node root, int value) {
+        if (root == null) {
+            return root;
+        }
+        if (value < root.value) {
+            root.left = delete(root.left, value);
+        } else if (value > root.value) {
+            root.right = delete(root.right, value);
+        } else {
+            if (root.left == null) {
+                return root.right;
+            } else if (root.right == null) {
+                return root.left;
+            }
+            root.value = min(root.right);
+            root.right = delete(root.right, root.value);
+        }
+        return root;
+    }
+
+    public int min(Node root) {
+        int minv = root.value;
+        while (root.left != null) {
+            minv = root.left.value;
+            root = root.left;
+        }
+        return minv;
+    }
+
+    public int max(Node root) {
+        int maxv = root.value;
+        while (root.right != null) {
+            maxv = root.right.value;
+            root = root.right;
+        }
+        return maxv;
+    }
+
+    public int sum(Node root) {
+        if (root == null) {
+            return 0;
+        }
+        return (root.value + sum(root.left)
+                + sum(root.right));
+    }
+
+    public int avg(Node root) {
+        return sum(root) / count(root);
+    }
 }
