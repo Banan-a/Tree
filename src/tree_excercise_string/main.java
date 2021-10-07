@@ -1,20 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package tree_excercise;
+package tree_excercise_string;
 
-/**
- *
- * @author Bana-na
- */
 public class main {
 
     public static void main(String[] args) {
         BinaryTree tree = new BinaryTree();
-        int a[] = {2, 90, 63, 70, 68, 72, 57};
-        int x;
+        String a[] = {"AB", "BC", "CC", "DN", "FP", "KA", "KL"};
+        String x;
         Node tmp;
 
         //Test isEmpty()
@@ -37,7 +28,7 @@ public class main {
         System.out.println("3.Test search(int x)");
         tree.clear();
         tree.insertAll(a);
-        x = 63;
+        x = "DN";
         tmp = tree.search(x);
         System.out.println(tmp);
         System.out.println("");
@@ -46,7 +37,7 @@ public class main {
         System.out.println("4.Test insert(int x)");
         tree.clear();
         tree.insertAll(a);
-        x = 44;
+        x = "KO";
         tree.insert(x);
         tree.traversal();
         System.out.println("");
@@ -89,7 +80,7 @@ public class main {
         System.out.println("\n10.Test delete(Node p, int value)");
         tree.clear();
         tree.insertAll(a);
-        tmp = tree.delete(tmp, 70);
+        tmp = tree.delete(tmp, "FP");
         tree.inorder(tmp);
         System.out.println("");
 
@@ -111,11 +102,35 @@ public class main {
         tree.insertAll(a);
         System.out.println(tree.sum(tmp));
 
-        //Test avg(Node p)
-        System.out.println("\n14.Test avg(Node p)");
+        //Test maxDepth(Node p)
+        System.out.println("\n14.Test maxDepth(Node p)");
         tree.clear();
         tree.insertAll(a);
-        System.out.println(tree.avg(tmp));
+        System.out.println(tree.maxDepth(tmp));
+
+        //Test sumOfLongRootToLeafPathUtil(Node p)
+        System.out.println("\n15.Test sumOfLongRootToLeafPathUtil(Node p)");
+        tree.clear();
+        tree.insertAll(a);
+        System.out.println(tree.sumOfLongRootToLeafPathUtil(tmp));
+
+        //Test isAVL(Node p)
+        System.out.println("\n16.Test isAVL(Node p)");
+        tree.clear();
+        tree.insertAll(a);
+        System.out.println(tree.isAVL(tmp));
+
+        //Test mystery(Node p)
+        System.out.println("\n17.Test mystery(Node p)");
+        tree.clear();
+        tree.insertAll(a);
+        System.out.println(tree.mystery(tmp));
+
+        //Test isHeap(Node p)
+        System.out.println("\n18.Test isHeap(Node p)");
+        tree.clear();
+        tree.insertAll(a);
+        System.out.println(tree.isHeap(tmp));
     }
 
 }
